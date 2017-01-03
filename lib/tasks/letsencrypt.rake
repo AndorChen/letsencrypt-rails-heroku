@@ -65,7 +65,7 @@ namespace :letsencrypt do
 
       unless challenge.verify_status == 'valid'
         puts "Problem verifying challenge."
-        abort "Status: #{challenge.verify_status}, Error: #{challenge.error.inspect}"
+        abort "Status: #{challenge.verify_status}, Error: #{challenge.error.class}"
       end
 
       puts ""
